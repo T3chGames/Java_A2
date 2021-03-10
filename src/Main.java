@@ -6,21 +6,16 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //dit zijn de formules die hij uit gaat rekenen
-        String formule = "4*3";
-        Integer resultaat = fBerkenen.bereken(formule);
+        String[] formules = {"4+1", "4*3", "(4+2)*5", "1+1+1"};
+        for (int i = 0; i < formules.length; i++) {
+           report(formules[i]);
+        }
+
+    }
+
+    private static void report(String formule) {
+        int resultaat = fBerkenen.bereken(formule);
         System.out.println(formule + " = " + resultaat);
-
-
-        formule = "(3+4)*3";
-        resultaat = fBerkenen.bereken(formule);
-        System.out.println(formule + " = " + resultaat);
-
-        formule = "10-4-2";
-        resultaat = fBerkenen.bereken(formule);
-        System.out.println(formule + " = " + resultaat);
-
-
     }
 
 }

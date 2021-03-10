@@ -15,6 +15,8 @@ class FormuleBerekenen {
         //als de formule voldoet dan kijkt hij wat voor soort formule het is dus * + of - .
 
 
+
+
         if (matcher.matches()) {
             switch (matcher.group(2)) {
                 case "*":
@@ -42,30 +44,15 @@ class FormuleBerekenen {
         //als er in de formule meerdere operators staan gaat de formule naar dit stukje code.
 
 
-            //in dit geval als het een + som is
-        } else if(formule.matches("(\\d+)([\\+])(\\d+)[\\+](\\d+)")) {
-            String[] cijfers = formule.split("\\+");
-            int resultaat = Integer.parseInt(cijfers[0]) + Integer.parseInt(cijfers[1])  + Integer.parseInt(cijfers[2]);
-            return resultaat;
+
+        } else  {
+            for(char chars : formule.toCharArray())
+
+            {
+
+            }
         }
 
-
-
-        //in dit geval als het een * som is
-        else if(formule.matches("(\\d+)([\\*])(\\d+)[\\*](\\d+)")) {
-            String[] cijfers = formule.split("\\*");
-            int resultaat = Integer.parseInt(cijfers[0]) * Integer.parseInt(cijfers[1])  * Integer.parseInt(cijfers[2]);
-            return resultaat;
-        }
-
-
-
-        //in dit geval als het een - som is
-        else if(formule.matches("(\\d+)([-])(\\d+)[-](\\d+)")) {
-            String[] cijfers = formule.split("-");
-            int resultaat = Integer.parseInt(cijfers[0]) - Integer.parseInt(cijfers[1])  - Integer.parseInt(cijfers[2]);
-            return resultaat;
-        }
-        return 0;
+       return 0;
     }
 }
